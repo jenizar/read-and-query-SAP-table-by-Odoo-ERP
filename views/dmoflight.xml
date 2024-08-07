@@ -1,0 +1,84 @@
+<odoo>
+ <data>
+
+<!-- Membuat View Tree/List DMOFLIGHT Table SAP: /DMO/FLIGHT-->
+ 
+<record id="dmoflight_service_view_tree" model="ir.ui.view">
+    <field name="name">dmoflight_service.tree</field>
+    <field name="model">dmoflight.service</field>
+    <field name="arch" type="xml">
+    <tree string="Flight Reference">        
+        <field name="CLIENT"/>
+        <field name="CARRIER_ID"/>
+        <field name="CONNECTION_ID"/>
+        <field name="FLIGHT_DATE"/>
+        <field name="PRICE"/>
+        <field name="CURRENCY_CODE"/>
+        <field name="PLANE_TYPE_ID"/>
+        <field name="SEATS_MAX"/>
+        <field name="SEATS_OCCUPIED"/>                     
+        </tree>
+    </field>
+</record>
+
+<!-- Membuat View Form DMOFLIGHT - Table SAP: /DMO/FLIGHT -->  
+<record id="dmoflight_service_view_form" model="ir.ui.view">
+   <field name="name">dmoflight.service.form</field>
+   <field name="model">dmoflight.service</field>
+   <field name="arch" type="xml">
+       <form string="Flight Reference">
+      <header>
+          <field name="state" widget="statusbar" statusbar_visible="draft,open,done"/>
+          <button name="get_dmoflight" type="object" state='draft' string="Get Flight Reference" class="oe_highlight"/>
+      </header>  
+          <sheet>
+             <group name="input_parameter" string="Input Parameter">
+              <group>
+                <field name="CARRIER_ID" />
+              </group>                 
+             </group> 
+                 <notebook>
+                <page string="Flight Reference">    
+                <group>
+                 <field name="dmoflight_line" mode="tree,kanban" nolabel="1"  colspan="2">
+                  <tree string="Flight Reference">
+                    <field name="CLIENT"/>
+                    <field name="CARRIER_ID"/>
+                    <field name="CONNECTION_ID"/>
+                    <field name="FLIGHT_DATE"/>
+                    <field name="PRICE"/>
+                    <field name="CURRENCY_CODE"/>
+                    <field name="PLANE_TYPE_ID"/>
+                    <field name="SEATS_MAX"/>
+                    <field name="SEATS_OCCUPIED"/>   
+                 </tree>
+                 <form string='Flight Reference'>
+                  <group>
+                    <field name="CLIENT"/>
+                    <field name="CARRIER_ID"/>
+                    <field name="CONNECTION_ID"/>
+                    <field name="FLIGHT_DATE"/>
+                    <field name="PRICE"/>
+                    <field name="CURRENCY_CODE"/>
+                    <field name="PLANE_TYPE_ID"/>
+                    <field name="SEATS_MAX"/>
+                    <field name="SEATS_OCCUPIED"/>   
+                   </group>
+                 </form>
+                 </field>
+                </group>            
+                </page>
+                 </notebook>
+          </sheet>       
+        </form>
+   </field>       
+</record>    
+
+<!-- Membuat Action/Event DMOFLIGHT Service -->
+<record id="dmoflight_service_action" model="ir.actions.act_window">
+   <field name="name">Flight Reference</field>
+   <field name="res_model">dmoflight.service</field>
+   <field name="view_mode">tree,form,kanban</field>
+</record>
+ </data>
+ </odoo>

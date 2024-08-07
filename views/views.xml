@@ -1,0 +1,56 @@
+<odoo>
+  <data>
+<!-- Membuat View Tree/List Travel Service -->
+<record id="travel_service_view_tree" model="ir.ui.view">
+   <field name="name">travel.service.tree</field>
+   <field name="model">travel.service</field>
+   <field name="arch" type="xml">
+       <tree string="Travel Service">
+           <field name="name"/>
+           <field name="description"/>
+       </tree>
+   </field>
+</record>
+<!-- Membuat View Form Travel Service -->
+<record id="travel_service_view_form" model="ir.ui.view">
+    <field name="name">travel.service.form</field>
+    <field name="model">travel.service</field>
+    <field name="arch" type="xml">
+        <form string="Travel Service">
+            <sheet>
+                <group>
+                    <field name="name"/>
+                </group>
+                <notebook>
+                    <page string="Description">
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<!-- Membuat Action/Event Travel Service -->
+<record id="travel_service_action" model="ir.actions.act_window">
+   <field name="name">Travel Service</field>
+   <field name="res_model">travel.service</field>
+   <field name="view_mode">form</field>
+   <field name="help" type="html">
+       <p name="o_view_nocontent_smiling_face">
+           Travel Service
+       </p>
+   </field>
+</record>
+
+<!-- Membuat Menu Dashboard -->
+<menuitem id="menu_dashboard_travel_service" name="Travel Service" web_icon="travel_service,static/description/icon.png"/>
+<!-- Membuat Menu Bar Services -->
+<menuitem id="menu_bar_service" name="Services" parent="menu_dashboard_travel_service"/>
+<!-- Membuat Menu Item Services -->
+<menuitem id="menu_item_service_schedule" name="Flight Schedule" parent="menu_bar_service" action="spfli_service_action"/>
+<menuitem id="menu_item_service_reference" name="Flight Reference" parent="menu_bar_service" action="dmoflight_service_action"/>
+  </data>
+</odoo>

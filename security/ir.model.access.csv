@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_travel_service_user,travel_service.travel.service,model_travel_service,base.group_user,1,1,1,1
+access_spfli_service_user,travel_service.spfli.service,model_spfli_service,base.group_user,1,1,1,1
+access_spfli_line_user,travel_service.spfli.line,model_spfli_line,base.group_user,1,1,1,1
+access_dmoflight_service_user,travel_service.dmoflight.service,model_dmoflight_service,base.group_user,1,1,1,1
+access_dmoflight_line_user,travel_service.dmoflight.line,model_dmoflight_line,base.group_user,1,1,1,1
+
