@@ -3,4 +3,6 @@ Read and Query SAP table by Odoo ERP
 
 References:
 
-https://github.com/orgs/community/discussions/22512
+1. https://odooerpapps.wordpress.com/2024/08/07/read-and-query-sap-table-using-odoo-erp/
+
+2. https://github.com/orgs/community/discussions/22512
